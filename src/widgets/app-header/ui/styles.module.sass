@@ -1,0 +1,23 @@
+@import 'app/styles'
+
+.header_wrapper
+  padding-block: rem(16)
+  border-bottom: 4px dashed $color-border-title
+
+.header
+  @include section-width
+
+  display: flex
+  column-gap: 30px
+  align-items: center
+
+  font-size: rem(48)
+  font-weight: 600
+  text-align: center
+
+  &_title__highlight
+    color: #07f
+
+.logo_wrapper
+  padding-right: 30px
+  border-right: 2px solid lightgray

@@ -1,0 +1,27 @@
+@import 'app/styles'
+
+.label
+  position: absolute
+  top: -8px
+  top: 12px
+  left: 10px
+
+  padding-inline: 5px
+  background-color: $white-1
+
+  font-size: rem(14)
+  line-height: 1
+  color: $color-label-input
+  font-weight: 500
+
+  transition: all .15s ease-in-out
+
+*:has(*:focus) > .label
+  top: -20px
+  top: 0
+  left: 0
+  padding: 0
+
+.required::after
+  content: '*'
+  margin-left: 5px

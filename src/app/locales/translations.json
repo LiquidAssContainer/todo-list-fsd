@@ -1,0 +1,80 @@
+{
+  "en": {
+    "translation": {
+      "task_list": "Task list",
+      "new_task": "Add a new task",
+      "edit_task": "Edit the task",
+      "title_label": "Title",
+      "description_label": "Description",
+      "submit_button": "Save",
+      "copyright": "All right are reflected and, eehhh, protected (I guess so)",
+      "change_language": "Language",
+      "task": {
+        "edit": "Edit the task",
+        "delete": "Delete the task"
+      },
+      "header": {
+        "tasks": "Tasks",
+        "add": "New task"
+      },
+      "form": {
+        "add-submit": "Add",
+        "edit-submit": "Save"
+      },
+      "footer": {
+        "about": "About",
+        "contacts": "Contacts",
+        "terms-of-service": "Terms of service"
+      },
+      "lorem-ipsum": {
+        "part1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non ex in dui sodales gravida. Donec sed mi accumsan ipsum scelerisque varius. Donec non consequat nulla. Proin ligula velit, vestibulum eget velit at, vestibulum mattis libero. Morbi mattis nunc vel placerat bibendum. Quisque eget iaculis velit. Pellentesque quis tincidunt nunc.",
+        "part2": "Sed at lectus iaculis, pretium sem ut, dapibus mi. Donec eleifend tellus et fermentum mollis. Nam euismod eros eu massa eleifend ornare. Fusce accumsan est non odio congue placerat. Quisque rutrum sed ante sit amet pellentesque. Integer eu pharetra augue. Nunc mauris augue, consectetur id est eu, dictum varius ante. Fusce sodales risus mauris, euismod rhoncus dui vulputate a. Etiam non orci lobortis, venenatis augue eget, sodales lorem. Vestibulum eleifend viverra ultricies. Vivamus semper ullamcorper malesuada. Sed hendrerit arcu sed sem convallis, sed lobortis enim feugiat."
+      }
+    }
+  },
+  "ru": {
+    "translation": {
+      "task_list": "Список задач",
+      "new_task": "Добавить новую задачу",
+      "edit_task": "Редактировать задачу",
+      "title_label": "Название",
+      "description_label": "Описание",
+      "submit_button": "Добавить",
+      "copyright": "Все права как-то защищены (наверное).",
+      "change_language": "Язык",
+      "task": {
+        "edit": "Редактировать задачу",
+        "delete": "Удалить задачу"
+      },
+      "header": {
+        "tasks": "Задачи",
+        "add": "Добавить задачу"
+      },
+      "form": {
+        "add-submit": "Добавить",
+        "edit-submit": "Сохранить"
+      },
+      "footer": {
+        "about": "О проекте",
+        "contacts": "Контакты",
+        "terms-of-service": "Условия использования"
+      }
+    }
+  },
+  "de": {
+    "translation": {
+      "new_task": "Neue Aufgabe hinzufügen",
+      "title_label": "Titel",
+      "description_label": "Beschreibung",
+      "submit_button": "Speichern"
+    }
+  },
+  "bg": {
+    "translation": {
+      "new_task": "Добавяне на нова задача",
+      "title_label": "Название",
+      "description_label": "Описание",
+      "submit_button": "Добави"
+    }
+  }
+}

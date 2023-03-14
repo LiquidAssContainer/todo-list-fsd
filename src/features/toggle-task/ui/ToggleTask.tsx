@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { changeIsDone, fetchChangeTask } from 'entities/task/model';
-import { Checkbox } from 'shared/ui/Checkbox';
+import { Checkbox } from 'shared/ui/components/Checkbox';
 
 import styles from './styles.module.sass';
 import { useAppThunkDispatch } from 'shared/lib';

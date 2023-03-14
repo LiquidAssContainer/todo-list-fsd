@@ -1,0 +1,35 @@
+@import 'shared/ui/styles'
+
+.container
+  display: block
+  width: 25px
+  height: 25px
+  cursor: pointer
+  user-select: none
+
+.text
+  @include visually-hidden
+
+.input_visual
+  display: flex
+  justify-content: center
+  align-items: center
+  border: 1px solid $black-1
+  border-radius: 50%
+  height: 100%
+  padding: 5px
+  background-color: $color-bg-input
+
+.input
+  @include visually-hidden
+
+  &:checked + &_visual
+    border-color: $color-bg-checkbox
+    background-color: $color-bg-checkbox
+
+  &:not(:checked) + &_visual
+    .icon
+      display: none
+
+.icon
+  fill: $white-1

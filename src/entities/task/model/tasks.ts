@@ -12,10 +12,12 @@ export type Task = {
 
 type TasksState = {
   tasks: Task[];
+  isLoading: boolean;
 };
 
 const initialState: TasksState = {
   tasks: [],
+  isLoading: false,
 };
 
 export const fetchTasks = createAsyncThunk(
@@ -90,12 +92,19 @@ const tasksSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchTasks.pending, (state) => {
+        state.isLoading = true;
+      })
       .addCase(
         fetchTasks.fulfilled,
         (state, { payload }: PayloadAction<Task[]>) => {
           state.tasks = payload;
+          state.isLoading = false;
         },
       )
+      .addCase(fetchTasks.rejected, (state) => {
+        state.isLoading = false;
+      })
       .addCase(
         deleteTaskAsync.fulfilled,
         (state, { payload }: PayloadAction<string>) => {

@@ -1,22 +1,21 @@
 import { FC, PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import { LanguageSelect } from 'features/change-language';
 import { SocialLink, socialLinkModel } from 'entities/social-link';
 
 import styles from './styles.module.sass';
-import { Link } from 'react-router-dom';
-import { Footer } from 'shared/ui/Footer';
+import { Footer } from 'shared/ui/components/Footer';
 
 interface AppFooterLinkProps extends PropsWithChildren {
   to: string;
 }
 
 const AppFooterLink: FC<AppFooterLinkProps> = ({ children, to }) => (
-  <Link className={styles.app_footer_link} to={to}>
+  <Link className={styles.link} to={to}>
     {children}
   </Link>
-  // <div className={styles.app_footer_link}>{children}</div>
 );
 
 export const AppFooter = () => {
@@ -25,7 +24,7 @@ export const AppFooter = () => {
   return (
     <Footer>
       <Footer.Row>
-        <ul className={styles.app_footer_links}>
+        <ul className={styles.link_list}>
           <AppFooterLink to="/about">{t('footer.about')}</AppFooterLink>
           <AppFooterLink to="/contacts">{t('footer.contacts')}</AppFooterLink>
           <AppFooterLink to="/terms-of-service">

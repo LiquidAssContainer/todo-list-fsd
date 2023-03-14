@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import { ExpandableRow } from 'shared/ui/ExpandableRow';
+
 import { ToggleTask } from 'features/toggle-task';
 import { DeleteTask } from 'features/delete-task';
-import { ReactComponent as DescriptionIcon } from './icons/description.svg';
 import { EditTaskButton } from 'features/edit-task';
+import { ExpandableRow } from 'shared/ui/components/ExpandableRow';
+import { ReactComponent as DescriptionIcon } from './icons/description.svg';
 
 import styles from './styles.module.sass';
 
@@ -20,25 +21,25 @@ export const TaskItem: FC<TaskItemProps> = ({
   description,
   isDone,
 }) => {
-  return (
-    <li className={styles.task_item}>
-      <ExpandableRow hasContent={Boolean(description)}>
-        <ExpandableRow.Summary>
-          <ToggleTask id={id} isDone={isDone} />
-          <div className={styles.task_name}>
-            {isDone ? <del className={styles.task_done}>{name}</del> : name}
-            {description && (
-              <DescriptionIcon className={styles.description_icon} />
-            )}
-          </div>
-          <div className={styles.controls_container}>
-            <EditTaskButton id={id} />
-            <DeleteTask id={id} />
-          </div>
-        </ExpandableRow.Summary>
+  const hasDescription = Boolean(description);
 
-        <ExpandableRow.Content>{description}</ExpandableRow.Content>
-      </ExpandableRow>
-    </li>
+  return (
+    <ExpandableRow hasContent={hasDescription}>
+      <ExpandableRow.Summary>
+        <ToggleTask id={id} isDone={isDone} />
+        <div className={styles.task_name}>
+          {isDone ? <del className={styles.task_done}>{name}</del> : name}
+          {description && (
+            <DescriptionIcon className={styles.description_icon} />
+          )}
+        </div>
+        <div className={styles.controls_container}>
+          <EditTaskButton id={id} />
+          <DeleteTask id={id} />
+        </div>
+      </ExpandableRow.Summary>
+
+      <ExpandableRow.Content>{description}</ExpandableRow.Content>
+    </ExpandableRow>
   );
 };

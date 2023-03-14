@@ -5,6 +5,7 @@ interface TaskFormState {
     name: string;
     description: string;
   };
+  isLoading: boolean;
 }
 
 type FieldEntry = {
@@ -18,6 +19,7 @@ const initialState: TaskFormState = {
     name: '',
     description: '',
   },
+  isLoading: false,
 };
 
 const taskFormSlice = createSlice({
@@ -38,6 +40,9 @@ const taskFormSlice = createSlice({
       // state.description = '';
     },
   },
+  // extraReducers: (builder) => {
+  //   builder.addCase()
+  // }
 });
 
 export const { changeInputField, setForm, resetForm } = taskFormSlice.actions;

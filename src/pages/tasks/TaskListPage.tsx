@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { TaskList } from 'widgets/task-list';
 import { fetchTasks } from 'entities/task/model';
-import { Title } from 'shared/ui/Title';
+import { Heading } from 'shared/ui/components/Heading';
 
 const TaskListPage = () => {
   const { t } = useTranslation();
@@ -16,7 +16,7 @@ const TaskListPage = () => {
 
   return (
     <>
-      <Title level={2}>{t('task_list')}</Title>
+      <Heading level={2}>{t('task_list')}</Heading>
       <TaskList />
     </>
   );

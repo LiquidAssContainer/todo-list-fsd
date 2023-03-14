@@ -2,7 +2,8 @@ import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { IconButton } from 'shared/ui/IconButton';
+import { IconButton } from 'shared/ui/components/IconButton';
+import { Icon } from 'shared/ui/components/Icon';
 import { ReactComponent as EditBtnIcon } from './pencil.svg';
 
 import styles from './styles.module.sass';
@@ -25,8 +26,9 @@ export const EditTaskButton: FC<EditTaskProps> = ({ id }) => {
     <IconButton
       className={styles.edit_button}
       onClick={handleClick}
-      icon={EditBtnIcon}
       label={label}
-    />
+    >
+      <Icon icon={EditBtnIcon} />
+    </IconButton>
   );
 };

@@ -1,0 +1,25 @@
+@import 'shared/ui/styles'
+
+.wrapper
+  display: flex
+  justify-content: center
+  align-items: flex-start
+
+.spinner
+  display: inline-block
+  @include size(90px)
+  // width: 90px
+  // height: 90px
+  border: 8px solid $color-border-spinner
+
+  // important, чтобы было проще менять border-color в другом месте
+  border-bottom-color: transparent !important
+  border-radius: 50%
+  animation: rotation 1s linear infinite
+
+@keyframes rotation
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)

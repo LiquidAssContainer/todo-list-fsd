@@ -1,0 +1,19 @@
+@import 'shared/ui/styles'
+
+.wrapper
+  background-color: $color-bg-footer
+
+.footer
+  @include section-width
+  padding-block: 20px
+  color: $color-text-footer
+
+  &_row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    gap: 10px
+
+    &:nth-child(n + 2)
+      margin-top: 20px

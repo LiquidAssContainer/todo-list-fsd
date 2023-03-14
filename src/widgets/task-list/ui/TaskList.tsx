@@ -1,21 +1,26 @@
-import styles from './styles.module.sass';
-import { taskModel } from 'entities/task';
-import { TaskItem, TaskItemProps } from './TaskItem';
 import { useSelector } from 'react-redux';
-import { Spinner } from 'shared/ui/Spinner';
+
+import { TaskItem, TaskItemProps } from './TaskItem';
+import { LoadingOverlay } from 'shared/ui/components/LoadingOverlay';
+
+import styles from './styles.module.sass';
 
 export const TaskList = () => {
   const { tasks, isLoading } = useSelector((state: any) => state.tasks);
 
-  return isLoading ? (
-    <Spinner />
-  ) : tasks.length ? (
-    <ul className={styles.task_list}>
-      {tasks.map((props: TaskItemProps) => (
-        <TaskItem key={props.id} {...props} />
-      ))}
-    </ul>
-  ) : (
-    <div>Пока что задач нет</div>
+  return (
+    <LoadingOverlay isLoading={isLoading}>
+      {tasks.length ? (
+        <ul className={styles.task_list}>
+          {tasks.map((props: TaskItemProps) => (
+            <li key={props.id} className={styles.task_item}>
+              <TaskItem {...props} />
+            </li>
+          ))}
+        </ul>
+      ) : isLoading ? null : (
+        <div>Пока что задач нет</div>
+      )}
+    </LoadingOverlay>
   );
 };

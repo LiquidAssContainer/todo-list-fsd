@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 
-import { Form } from 'shared/ui/Form';
-import { changeInputField } from './model';
+import { Form } from 'shared/ui/components/Form';
+import { changeInputField, resetForm } from './model';
 
 type TaskFieldName = 'name' | 'description';
 
@@ -34,6 +34,12 @@ export const TaskForm: FC<TaskFormProps> = ({ onSubmit, type }) => {
   const onFieldChange = ({ name, value }: FieldChangeParams): void => {
     dispatch(changeInputField({ name, value }));
   };
+
+  // const onUnmount = () => dispatch(resetForm())
+
+  useEffect(() => {
+    return (): any => dispatch(resetForm());
+  }, []);
 
   return (
     <Form onSubmit={handleSubmit}>

@@ -1,15 +1,17 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ColoredText } from 'shared/ui/ColoredText';
-import { Navbar } from 'shared/ui/Navbar';
+import { Navbar } from 'shared/ui/components/Navbar';
 
 import styles from './styles.module.sass';
 
 const Logo: FC = () => {
   return (
     <div className={styles.logo}>
-      <ColoredText color="#276eef">ToDo</ColoredText>List
+      <span className={styles.colored_text} data-color="#276eef">
+        ToDo
+      </span>
+      List
     </div>
   );
 };

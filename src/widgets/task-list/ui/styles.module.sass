@@ -1,3 +1,5 @@
+@import 'shared/ui/styles'
+
 .task_list
   padding-block: 10px 30px
 
@@ -5,16 +7,21 @@
   margin-top: 20px
 
 .task_name
+  display: flex
   text-overflow: ellipsis
   overflow: hidden
 
 .task_done
-  color: #888
+  color: $color-typo-del
+
+.description_icon_wrapper
+  display: flex
+  align-items: center
+  margin-left: 0.25em
 
 .description_icon
   height: 1rem
-  fill: #bbb
-  margin-left: 0.25em
+  fill: $color-fill-description
 
 .controls_container
   display: flex

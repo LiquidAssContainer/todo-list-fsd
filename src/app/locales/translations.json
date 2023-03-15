@@ -11,7 +11,8 @@
       "change_language": "Language",
       "task": {
         "edit": "Edit the task",
-        "delete": "Delete the task"
+        "delete": "Delete the task",
+        "has-description": "With description"
       },
       "header": {
         "tasks": "Tasks",
@@ -44,7 +45,8 @@
       "change_language": "Язык",
       "task": {
         "edit": "Редактировать задачу",
-        "delete": "Удалить задачу"
+        "delete": "Удалить задачу",
+        "has-description": "Есть описание"
       },
       "header": {
         "tasks": "Задачи",

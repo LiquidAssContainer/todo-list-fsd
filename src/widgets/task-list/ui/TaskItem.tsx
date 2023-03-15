@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { ToggleTask } from 'features/toggle-task';
 import { DeleteTask } from 'features/delete-task';
@@ -7,6 +8,7 @@ import { ExpandableRow } from 'shared/ui/components/ExpandableRow';
 import { ReactComponent as DescriptionIcon } from './icons/description.svg';
 
 import styles from './styles.module.sass';
+import { Icon } from 'shared/ui/components/Icon';
 
 export type TaskItemProps = {
   id: string;
@@ -21,7 +23,9 @@ export const TaskItem: FC<TaskItemProps> = ({
   description,
   isDone,
 }) => {
-  const hasDescription = Boolean(description);
+  const { t } = useTranslation();
+  const hasDescription: boolean = Boolean(description);
+  const hasDescriptionTitle: string = t('task.has-description');
 
   return (
     <ExpandableRow hasContent={hasDescription}>
@@ -30,7 +34,15 @@ export const TaskItem: FC<TaskItemProps> = ({
         <div className={styles.task_name}>
           {isDone ? <del className={styles.task_done}>{name}</del> : name}
           {description && (
-            <DescriptionIcon className={styles.description_icon} />
+            <div
+              className={styles.description_icon_wrapper}
+              title={hasDescriptionTitle}
+            >
+              <Icon
+                className={styles.description_icon}
+                icon={DescriptionIcon}
+              />
+            </div>
           )}
         </div>
         <div className={styles.controls_container}>

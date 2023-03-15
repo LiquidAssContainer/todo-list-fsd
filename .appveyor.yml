@@ -9,16 +9,16 @@ branches:
 cache: node_modules
 
 install:
-  - pnpm install
+  - yarn
 
 build: off
 
 build_script:
-  - pnpm build
+  - yarn build
 
 deploy_script:
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - pnpm push-dir --dir=build --branch=gh-pages --force --verbose
+  - npx push-dir --dir=build --branch=gh-pages --force --verbose

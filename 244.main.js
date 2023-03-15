@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktodo_list_fsd=self.webpackChunktodo_list_fsd||[]).push([[244],{3244:function(s,t,e){e.r(t);var n=e(5893);t.default=function(){return(0,n.jsx)("div",{children:"Контакты =)"})}}}]);
